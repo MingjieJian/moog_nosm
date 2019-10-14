@@ -104,13 +104,16 @@ c     lineprintop =4 outputs line-center opacities
             endif
          enddo
       endif
+
       if (linprintopt .ge. 4) then
-         write (nf1out,1001)
+         write (nf1out,1017)
          do j=1,nlines
-            write (nf1out,1002) j,(kapnu0(j,i),i=1,ntau)
+            write (nf1out,1018) j, wave1(j)
+            write (nf1out,1019) (kapnu0(j,i),i=1,ntau)
          enddo
       endif
       return
+
 
 
 c*****here the STRONG line data are output; MOOG assumes that no
@@ -296,7 +299,10 @@ c*****format statements
      .        10x,'step size in the curve =',f7.3)
 1014  format (/'PARTITION FUNCTIONS')
 1015  format (/'Z =',i2,' (',a2,'),  mass=',f8.3,'  I.P.s=', 3f7.3)
-1016  format ('    ionization state = ',i1/(10f8.3))  
+1016  format ('    ionization state = ',i1/(10f8.3))
+1017  format (/'LINE OPACITIES')
+1018  format (/'LINE', i4, ' AT WAVELENGTH ',f8.2)
+1019  format (10E15.7)  
 2001  format (/'INPUT LINES DATA FOR',i4,' STRONG LINES'/
      .        '   #', 5x, 'wave1', 3x, 'spec', 9x, 'spec#',
      .        3x, 'E.P.', 3x, 'loggf', 5x, 'damp', 4x, 'logSTR')
