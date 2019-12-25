@@ -188,7 +188,7 @@ c*****now finish by summing the gammas and computing the Voigt *a* values
 
 c*****format statements
 1001  format(//' LINE BROADENING PARAMETERS FOR LINE', i4,
-     .       ' AT WAVELENGTH',f8.2/
+     .       ' AT WAVELENGTH ',f8.2/
      .       '  i',4x,'natural',6x,'Stark',4x,'VdWaals',
      .       6x,'total',5x,'a(j,i)')
 1002  format (i3,1p5e11.3)
