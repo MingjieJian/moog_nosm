@@ -36,43 +36,43 @@ c*****define the plot boundaries
 
 
 c*****start the plot via some setup calls
-c      call sm_location (3500,31000,5000,31000)
-c      call sm_limits (xlo,xhi,ylo,yhi)
+      call sm_location (3500,31000,5000,31000)
+      call sm_limits (xlo,xhi,ylo,yhi)
       call findtic (xlo,xhi,bigxtic,smlxtic)
       call findtic (ylo,yhi,bigytic,smlytic)
-c      call sm_ticksize (smlxtic,bigxtic,smlytic,bigytic)
+      call sm_ticksize (smlxtic,bigxtic,smlytic,bigytic)
  
  
 c*****draw and label the box for the curve-of-growth
-c      call sm_expand (0.6)
-c      call sm_lweight (1.4)
+      call sm_expand (0.6)
+      call sm_lweight (1.4)
       call defcolor (1)
-c      call sm_box (0,0,0,0)
-c      call sm_expand (1.0)
-c      call sm_box (1,2,4,4)
+      call sm_box (0,0,0,0)
+      call sm_expand (1.0)
+      call sm_box (1,2,4,4)
       array = '1/lambda'
-c      call sm_relocate (0.5*(xlo+xhi),ylo-0.20*(yhi-ylo))
-c      call sm_putlabel (5,array)
+      call sm_relocate (0.5*(xlo+xhi),ylo-0.20*(yhi-ylo))
+      call sm_putlabel (5,array)
       array = 'log (flux)'
-c      call sm_relocate (xlo-0.10*(xhi-xlo),0.5*(yhi+ylo))
-c      call sm_angle (90.)
-c      call sm_putlabel (5,array)
-c      call sm_angle (0.)
-c      call sm_ltype (1)
-c      call sm_lweight (0.8)
-c      call sm_grid (0,0)
-c      call sm_ltype (0)
+      call sm_relocate (xlo-0.10*(xhi-xlo),0.5*(yhi+ylo))
+      call sm_angle (90.)
+      call sm_putlabel (5,array)
+      call sm_angle (0.)
+      call sm_ltype (1)
+      call sm_lweight (0.8)
+      call sm_grid (0,0)
+      call sm_ltype (0)
 
 
 c*****plot the computed flux curve points
-c      call sm_expand (1.0)
+      call sm_expand (1.0)
       call defcolor (2)
       style(1) = 240.7
-c      call sm_ptype (style,1)
-c      call sm_points (waveplot,flxplt,ntot)
+      call sm_ptype (style,1)
+      call sm_points (waveplot,flxplt,ntot)
       call defcolor (1)
-c      call sm_relocate ((xhi+xlo)/2.0,ylo+0.07*(yhi-ylo))
-c      call sm_putlabel (5,moditle)
+      call sm_relocate ((xhi+xlo)/2.0,ylo+0.07*(yhi-ylo))
+      call sm_putlabel (5,moditle)
 
 
 c*****compute total flux and effective temperature; exit normally
@@ -84,8 +84,8 @@ c*****compute total flux and effective temperature; exit normally
       teff = (3.14159*fluxtot/5.67d-5)**0.25
       write (smitle,1001) fluxtot, teff
       call defcolor (5)
-c      call sm_relocate ((xhi+xlo)/2.0,ylo+0.14*(yhi-ylo))
-c      call sm_putlabel (5,smitle)
+      call sm_relocate ((xhi+xlo)/2.0,ylo+0.14*(yhi-ylo))
+      call sm_putlabel (5,smitle)
       return
 
 

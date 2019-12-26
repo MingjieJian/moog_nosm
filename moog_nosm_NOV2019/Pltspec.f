@@ -200,13 +200,13 @@ c*****or the cross hairs can be used to zoom in on a part of the plot
          array = 'MARK THE LOWER LEFT HAND CORNER WITH THE CURSOR'
          istat = ivcleof(13,1)
          istat = ivwrite(13,3,array,47)
-         call pointcurs
+c         call pointcurs
          xlo = xplotpos
          ylo = yplotpos
          array = 'MARK THE UPPER RIGHT HAND CORNER WITH THE CURSOR'
          istat = ivcleof(14,1)
          istat = ivwrite (14,1,array,48)
-         call pointcurs
+c         call pointcurs
          xhi = xplotpos
          yhi = yplotpos
          call boxit
@@ -224,7 +224,7 @@ c*****or cursor position can be returned
          array = 'MARK THE POSITION WITH THE CURSOR'
          istat=ivcleof(21,1)
          istat=ivwrite(13,3,array,34)
-         call drawcurs
+c         call drawcurs
          go to 100
       endif
 
@@ -285,7 +285,7 @@ c*****now either here make a hardcopy plot
             whichwin = '2of2'
          endif
          lscreen = 12
-         call makeplot (lscreen)
+c         call makeplot (lscreen)
          go to 100
       endif
 
@@ -303,7 +303,7 @@ c*****or write the plot to a postscript file
             whichwin = '2of2'
          endif
          lscreen = 12
-         call makeplot (lscreen)
+c         call makeplot (lscreen)
          if (choice .eq. 'g') then
             return
          else
@@ -356,7 +356,7 @@ c*****or plot on the terminal
       else
          whichwin = '2of2'
       endif
-      call makeplot (lscreen)
+c      call makeplot (lscreen)
 
 
 c*****finally, print the option table

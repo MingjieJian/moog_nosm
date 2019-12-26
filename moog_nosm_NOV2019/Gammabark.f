@@ -30,9 +30,7 @@ c    data are present
             nwant = 36
          endif
          do k=1,30000
-c			if (silent .eq. 'n') then
-	            call blankstring (line)
-c			endif
+            call blankstring (line)
             read (nwant,1001,end=10) line 
             read (line,*) wavebk(k), idbk(k), gammabk(k), alphabk(k)
             if (line(34:) .ne. '    ') then

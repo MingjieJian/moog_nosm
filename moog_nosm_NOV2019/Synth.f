@@ -93,10 +93,8 @@ c*****do the syntheses
             stop
          endif
          ncall = 1
-c		 if (silent .eq. 'n') then
-         	call getsyns (lscreen,ncall)
-c		 endif         
-
+         call getsyns (lscreen,ncall)
+         
 
 c*****now either don't make a plot (plotopt = 0) 
 c                plot the synthetic spectrum, (plotopt = 1)

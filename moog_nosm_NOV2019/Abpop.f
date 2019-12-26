@@ -211,16 +211,14 @@ c     are enough lines; then the user will be prompted on some
 c     options concerning what is seen on the plot
 
       if (plotopt .ne. 0) then
-c		 if (silent .eq. 'n') then
-      	 	call blankstring (moditle)
-c		 endif
+         call blankstring (moditle)
          moditle(1:70) = popitle(1:70)
          moditle(57:80) = 'EW-POPULATION '
          call pltabun
       endif
 
 
-c*****quit, or go on to another species?
+*****quit, or go on to another species?
       array = 'DO ANOTHER SPECIES ([y]/n)? '
       if (silent .eq. 'n') then 
          nchars = 28

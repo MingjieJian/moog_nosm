@@ -39,19 +39,13 @@ c*****read the table input for integrated light EW matching
          do i=1,1000
             read (nftable,1001) line
             if     (line(1:5) .eq. 'modpr') then
-c			   if (silent .eq. 'n') then
-	               call blankstring (modpre)
-c			   endif
+               call blankstring (modpre)
                modpre(1:70) = line(11:80)
             elseif (line(1:5) .eq. 'synpr') then
-c			   if (silent .eq. 'n') then
-	               call blankstring (synpre)
-c			   endif
+               call blankstring (synpre)
                synpre(1:70) = line(11:80)
             elseif (line(1:5) .eq. 'title') then
-c			   if (silent .eq. 'n') then
-	               call blankstring (abitle)
-c			   endif
+               call blankstring (abitle)
                popitle(1:74) = line(7:80)
                write (nf7out,1002) popitle(1:73)
             elseif (line(1:5) .eq. 'model') then
@@ -80,19 +74,13 @@ c*****read the table input for integrated light spectrum syntheses
             call blankstring (line)
             read (nftable,1001) line(1:80)
             if     (line(1:5) .eq. 'modpr') then
-c			   if (silent .eq. 'n') then
-	               call blankstring (modpre)
-c			   endif
+               call blankstring (modpre)
                modpre(1:70) = line(11:80)
             elseif (line(1:5) .eq. 'synpr') then
-c			   if (silent .eq. 'n') then
-	               call blankstring (synpre)
-c			   endif
+               call blankstring (synpre)
                synpre(1:70) = line(11:80)
             elseif (line(1:5) .eq. 'title') then
-c			   if (silent .eq. 'n') then
-	               call blankstring (popitle)
-c			   endif
+               call blankstring (popitle)
                popitle(1:74) = line(7:80)
                write (nf7out,1003) popitle(1:74)
             elseif (line(1:5) .eq. 'abund') then

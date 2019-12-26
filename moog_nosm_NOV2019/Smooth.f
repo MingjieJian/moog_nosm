@@ -124,7 +124,7 @@ c     D. F. Gray, 1976, "The Obs. & Anal. of Stell. Phot", p394-9
          if (step .ge. dlamlim) then
             rotateflag = 'f'
          else
-            pi = 3.1415927
+            pi = 3.141527
             bottom = dlamlim*pi*(1.-limbdark/3.)
             c1 = 2.*(1.-limbdark)/bottom
             c2 = 0.5*limbdark*pi/bottom
@@ -462,7 +462,7 @@ c     to do next
 
 c*****format statements
 1002  format (a80)
-1003  format (10f8.4)
+1003  format (10f7.4)
 1004  format ('           c=v+g, d=m+g, r=m+v+g, p=VARIABLE GAUSS')
 1005  format ('the number of points per synthesis = ',i6/
      .        'start = ',f10.3,5x,'stop = ',f10.3,5x,'step = ',f10.3)

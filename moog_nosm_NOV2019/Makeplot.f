@@ -9,37 +9,37 @@ c******************************************************************************
       implicit real*8 (a-h,o-z)
       include 'Atmos.com'
       include 'Pstuff.com'
-      integer lscreen, nchars
+      integer sm_device, lscreen, nchars
 
 
 c  open the plot device: screen terminal
       if (plotroutine(1:4) .eq. 'term') then
-c         if (sm_device(smterm) .lt. 0) then
-c            write (array,1001) smterm
-c            istat = ivwrite(lscreen+1,1,array,79)
-c            write (nf1out,1007) array(1:79)
-c            stop
-c         endif
+         if (sm_device(smterm) .lt. 0) then
+            write (array,1001) smterm
+            istat = ivwrite(lscreen+1,1,array,79)
+            write (nf1out,1007) array(1:79)
+            stop
+         endif
       endif
 
 
 c  open the plot device: hardcopy sent to printer
       if (plotroutine(1:4) .eq. 'hard') then
          if     (plotroutine(6:9) .eq. 'land') then
-c            if     (sm_device('postland') .lt. 0) then
-c               write (array,1002)
-c               istat = ivwrite(lscreen+1,1,array,34)
-c               write (nf1out,1007) array(1:34)
-c               stop
-c            endif
+            if     (sm_device('postland') .lt. 0) then
+               write (array,1002)
+               istat = ivwrite(lscreen+1,1,array,34)
+               write (nf1out,1007) array(1:34)
+               stop
+            endif
          elseif (plotroutine(6:9) .eq. 'port') then
-c            if (sm_device('postport') .lt. 0) then
-c               write (array,1009)
-c               istat = ivwrite(lscreen+1,1,array,34)
-c               write (nf1out,1007) array(1:34)
-c               write (nf1out,1009)
-c               stop
-c            endif
+            if (sm_device('postport') .lt. 0) then
+               write (array,1009)
+               istat = ivwrite(lscreen+1,1,array,34)
+               write (nf1out,1007) array(1:34)
+               write (nf1out,1009)
+               stop
+            endif
          endif
       endif
 
@@ -69,17 +69,17 @@ c  open the plot device: postscript file
             endif
          endif
          write (array,errmess) f5out(1:nchars)
-c         if (sm_device(array(1:nchars+13)) .lt. 0) then
-c            write (nf1out,1007) array(1:nchars+9)
-c            istat = ivwrite(lscreen+1,1,array,nchars+9)
-c            stop
-c         endif
+         if (sm_device(array(1:nchars+13)) .lt. 0) then
+            write (nf1out,1007) array(1:nchars+9)
+            istat = ivwrite(lscreen+1,1,array,nchars+9)
+            stop
+         endif
       endif
 
 
 c  issue standard beginning commands
-c      call sm_graphics
-c      call sm_erase
+      call sm_graphics
+      call sm_erase
 
 
 c  call the routine that makes the desired plot
@@ -100,10 +100,10 @@ c  issue standard ending commands; exit normally
       if (plotroutine(1:4) .eq. 'file') then
          f5out = 'optional_output_file'
       endif
-c      call sm_gflush
-c      if (plotroutine(1:4).eq.'hard' .or. 
-c     .    plotroutine(1:4).eq.'file') call sm_hardcopy
-c      call sm_alpha
+      call sm_gflush
+      if (plotroutine(1:4).eq.'hard' .or. 
+     .    plotroutine(1:4).eq.'file') call sm_hardcopy
+      call sm_alpha
       return
 
 
