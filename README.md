@@ -25,3 +25,18 @@ Here the install method of version NOV2019 are present as example. For the insta
 5. Then installation should go by itself.
 6. If you see some prompt of `make sure that you have entered the proper parameters for MOOG into the FORTRAN source driver routine Moog.f !!!!!!!!!!!!` then you should see a `MOOG` and `MOOGSILENT` file present in the current folder.
 7. Done.
+
+## Warnings
+
+Some warnings appear during the make command.
+Most of them are no-harm, such as:
+- `Warning: Line truncated at (1) [-Wline-truncation]` and
+- `Warning: Possible change of value in conversion from REAL(8) to INTEGER(4) at (1) [-Wconversion]`.
+
+They are intended and tried to get rid of some of those.
+
+However there are two may worth a slight change:
+- `Warning: ‘ikount’ may be used uninitialized in this function [-Wmaybe-uninitialized]` in `Molquery.f`
+- `Warning: Rank mismatch in argument ‘xnew’ at (1) (rank-1 and scalar) [-Wargument-mismatch]` in `OpacHydrogen.f`
+
+I leave them as in the initial code.

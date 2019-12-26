@@ -19,7 +19,7 @@ c     be able to pull in auxiliary data files; executing 'make' will
 c     generate a reminder of this necessity
       write (moogpath,1001)
       moogpath = 
-     .  '/media/mingjie/8AE8355FE8354AA9/moog_nosm/moog_nosm_NOV2019/'
+     .  '/home/mingjie/software/MOOG/NOV2019_modified/'
 
 
 c*****What kind of machine are you using?  Possible ones are:
