@@ -16,11 +16,11 @@ The modified MOOG of versions NOV2019 and FEB2017 are provided, and their instal
 
 ## Install
 
-Here the install method of version NOV2019 are present as example. For the installation of version FEB2017, change `FEB2017` to `NOV2019`.
+Here the install method of version NOV2019 are present as example. For the installation of version NOV2019, change `FEB2017` to `NOV2019`.
 
 1. Clone or download the respository.
 2. Enter the MOOG folder by `cd PATH_TO_REPO/moog_nosm_NOV2019`.
-3. Run the bash file `./install.sh`
+3. Run the bash file `./install.sh` or `bash ./install.sh` 
 4. There will be a prompt asking which kind of machine the installation is on; choose either `Linux` (or simply hit Enter) or `Mac`. I test it in Ubuntu but not for Mac so please be cautious.
 5. Then installation should go by itself.
 6. If you see some prompt of `make sure that you have entered the proper parameters for MOOG into the FORTRAN source driver routine Moog.f !!!!!!!!!!!!` then you should see a `MOOG` and `MOOGSILENT` file present in the current folder.
