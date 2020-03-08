@@ -1,7 +1,7 @@
 #     makefile for MOOG with all of the common block assignments;
 #     this is for a Redhat linux machine
 
-#     here are the object files 
+#     here are the object files
 OBJECTS = Abfind.o Abpop.o Abunplot.o Batom.o Begin.o Binary.o \
         Binplot.o Binplotprep.o Blends.o Bmolec.o Boxit.o \
         Calmod.o Cdcalc.o Chabund.o Cog.o Cogplot.o Cogsyn.o \
@@ -36,7 +36,7 @@ SMLIB = /opt/local/lib
 #        here are the compilation and linking commands
 all: MOOG ;
 	@echo -----------------------------------------------------------------
-	@echo 
+	@echo
 	@echo make sure that you have entered the proper parameters
 	@echo for MOOG into the FORTRAN source driver
 	@echo routine Moog.f !!!!!!!!!!!!
@@ -48,8 +48,7 @@ all: MOOG ;
 	@echo -----------------------------------------------------------------
 
 MOOG:  $(OBJECTS);
-	$(FC) $(OBJECTS) -o MOOG -L$(X11LIB) -lX11 \
-        -L$(SMLIB) -lplotsub -ldevices -lutils
+	$(FC) $(OBJECTS) -o MOOG
 
 $(OBJECTS): $(COMMON)
 

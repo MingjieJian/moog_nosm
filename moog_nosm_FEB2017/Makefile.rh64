@@ -37,7 +37,7 @@ SMLIB = /astro/apps6/opt/sm-2.4.35/lib
 #        here are the compilation and linking commands
 all: MOOG ;
 	@echo -----------------------------------------------------------------
-	@echo 
+	@echo
 	@echo make sure that you have entered the proper parameters
 	@echo for MOOG into the FORTRAN source driver
 	@echo routine Moog.f !!!!!!!!!!!!
@@ -49,8 +49,7 @@ all: MOOG ;
 	@echo -----------------------------------------------------------------
 
 MOOG:  $(OBJECTS);
-	$(FC) $(OBJECTS) -o MOOG -L$(X11LIB) -lX11 \
-        -L$(SMLIB) -lplotsub -ldevices -lutils
+	$(FC) $(OBJECTS) -o MOOG
 
 $(OBJECTS): $(COMMON)
 
