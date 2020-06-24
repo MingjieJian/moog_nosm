@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Bash program to modify the USER SETUP AREA of Moog.f and Moogsilent.f.
+# Author: Mingjie Jian, ssaajianmingjie@gmail.com
 
 # Change the moogpath from '/Users/chris/CODES/moogfeb2017/' to `pwd` or user specified path 
 
@@ -28,8 +29,14 @@ do
 	fi
 done
 
-sed -i "29s/'.*'/'$machine'/" Moog.f
-sed -i "29s/'.*'/'$machine'/" Moogsilent.f
+if [ $machine == 'pcl' ]
+then
+	sed -i "29s/'.*'/'$machine'/" Moog.f
+	sed -i "29s/'.*'/'$machine'/" Moogsilent.f
+elif [ $machine == 'mac' ]
+then
+	sed -i "_old" "29s/'.*'/'$machine'/" Moog.f                                                                       
+	sed -i "_old" "29s/'.*'/'$machine'/" Moogsilent.f
 
 # Install MOOG and MOOGSILENT
 
