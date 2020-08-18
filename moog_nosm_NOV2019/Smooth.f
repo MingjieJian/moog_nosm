@@ -462,7 +462,7 @@ c     to do next
 
 c*****format statements
 1002  format (a80)
-1003  format (10f7.4)
+1003  format (10f8.4)
 1004  format ('           c=v+g, d=m+g, r=m+v+g, p=VARIABLE GAUSS')
 1005  format ('the number of points per synthesis = ',i6/
      .        'start = ',f10.3,5x,'stop = ',f10.3,5x,'step = ',f10.3)
