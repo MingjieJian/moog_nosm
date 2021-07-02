@@ -27,7 +27,7 @@ COMMON =  Atmos.com Dummy.com Equivs.com Factor.com Kappa.com Linex.com \
         Quants.com Multimod.com Dampdat.com
 
 CC = cc
-FC = f77 -Wall
+FC = f77 -Wall -fallow-argument-mismatch
 
 # the following lines point to some needed libraries
 X11LIB = /usr/X11R6/lib
@@ -48,8 +48,7 @@ all: MOOGSILENT ;
 	@echo -----------------------------------------------------------------
 
 MOOGSILENT:  $(OBJECTS);
-	$(FC) $(OBJECTS) -o MOOGSILENT -L$(X11LIB) -lX11 \
-        -L$(SMLIB) -lplotsub -ldevices -lutils
+	$(FC) $(OBJECTS) -o MOOGSILENT 
 
 $(OBJECTS): $(COMMON)
 
