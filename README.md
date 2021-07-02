@@ -15,6 +15,10 @@ Beside this some lines are also modified:
 
 The modified MOOG of versions NOV2019 and FEB2017 are provided, and their installation methods are identical.
 
+I also recommend checking another repo: [pymoog](https://github.com/MingjieJian/pymoog). 
+It provide some python code, stellar atmosphere models and line lists to let you use MOOG immediately.
+Future modification on moog_nosm will be first done in pymoog.  
+
 ## Install
 
 Here the install method of version NOV2019 are present as example. For the installation of version NOV2019, change `FEB2017` to `NOV2019`.
@@ -26,6 +30,11 @@ Here the install method of version NOV2019 are present as example. For the insta
 5. Then installation should go by itself.
 6. If you see some prompt of `make sure that you have entered the proper parameters for MOOG into the FORTRAN source driver routine Moog.f !!!!!!!!!!!!` then you should see a `MOOG` and `MOOGSILENT` file present in the current folder.
 7. Done.
+
+## Usage 
+
+Run `MOOG` or `MOOGSILENT` inside the folder `moog_nosm_NOV2019`, and follow the prompted instructions.
+You can also ailas `MOOG` or `MOOGSILENT` in `.bashrc` so you can run MOOG in anywhere.
 
 ## Warnings
 
